@@ -15,15 +15,15 @@ Big O notation is a mathematical notation used in computer science to describe t
 - Simple and works on unsorted arrays.
 - Best for small datasets or when the cost of sorting outweighs the benefits of faster search.
 - Performance degrades linearly with the size of the array.
-##### Best-case scenario:
+#### Best-case scenario:
 **O(1)**: The target element is the first element in the array.
 **Example**: Searching for `1` in `[1, 2, 3, 4, 5]`.
 
-##### Average-case scenario:
+#### Average-case scenario:
 **O(n/2) which simplifies to O(n)**: The target element is somewhere in the middle of the array.
 **Example**: Searching for `3` in `[1, 2, 3, 4, 5]`.
 
-##### Worst-case scenario:
+#### Worst-case scenario:
 **O(n)**: The target element is the last element in the array or not present at all.
 **Example**: Searching for `5` in `[1, 2, 3, 4, 5]` or searching for `6` in `[1, 2, 3, 4, 5]`.
 
@@ -32,16 +32,27 @@ Big O notation is a mathematical notation used in computer science to describe t
 - More efficient for larger datasets.
 - Performance improves logarithmically with the size of the array.
 
-##### Best-case scenario:
+#### Best-case scenario:
 **O(1)**: The target element is the middle element of the array.
 **Example**: Searching for `3` in `[1, 2, 3, 4, 5]`.
 
-##### Average-case scenario:
+#### Average-case scenario:
 **O(log n)**: The target element is located somewhere in the array, necessitating a few iterations.
 **Example**: Searching for `2` in `[1, 2, 3, 4, 5]`, where the search progresses through `3 -> 1 -> 2`.
 
-##### Worst-case scenario:
+#### Worst-case scenario:
 **O(log n)**: The target element is not present in the array, or it is one of the end elements.
 **Example**: Searching for `6` in `[1, 2, 3, 4, 5]` or searching for `1` or `5` in `[1, 2, 3, 4, 5]`.
+
+## 3. Which algorithm is more suitable for your platform and why?
+**If the dataset is large:** Binary Search is more suitable because it efficiently handles large datasets by significantly reducing the search time.
+**If the dataset is frequently updated:** You might need to maintain a sorted array to use binary search efficiently. If updates are frequent, consider the overhead of maintaining sorted order. In such cases, you may need to balance between the cost of sorting and the efficiency of binary search.
+**If the dataset is small or unsorted:** Linear Search might be adequate due to its simplicity and the lower overhead of maintaining a sorted order.
+
+In summary, binary search is generally more suitable for large and frequently searched datasets due to its efficient logarithmic time complexity. However, if the array is unsorted or frequently updated, the simpler linear search may be more practical. For an e-commerce platform dealing with large and static datasets, binary search would likely offer better performance.
+
+
+
+
 
 
