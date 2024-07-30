@@ -89,3 +89,10 @@ public class ObserverPatternExample {
         stockMarket.setStockPrice(165.00);
     }
 }
+// OUTPUT
+
+// MobileApp received update: AAPL is now 155.0
+// WebApp received update: AAPL is now 155.0
+// MobileApp received update: AAPL is now 160.0
+// WebApp received update: AAPL is now 160.0
+// MobileApp received update: AAPL is now 165.0

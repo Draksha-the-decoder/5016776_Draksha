@@ -1,8 +1,4 @@
-// File: BuilderPatternExample.java
-
-// Computer class with Builder pattern
 class Computer {
-    // Attributes of Computer
     private String CPU;
     private String RAM;
     private String storage;
@@ -11,7 +7,6 @@ class Computer {
     private String powerSupply;
     private String coolingSystem;
 
-    // Private constructor that takes a Builder as a parameter
     private Computer(Builder builder) {
         this.CPU = builder.CPU;
         this.RAM = builder.RAM;
@@ -22,9 +17,7 @@ class Computer {
         this.coolingSystem = builder.coolingSystem;
     }
 
-    // Static nested Builder class
     public static class Builder {
-        // Attributes of the Builder
         private String CPU;
         private String RAM;
         private String storage;
@@ -33,7 +26,6 @@ class Computer {
         private String powerSupply;
         private String coolingSystem;
 
-        // Methods to set each attribute
         public Builder setCPU(String CPU) {
             this.CPU = CPU;
             return this;
@@ -69,13 +61,11 @@ class Computer {
             return this;
         }
 
-        // Method to build and return a Computer instance
         public Computer build() {
             return new Computer(this);
         }
     }
 
-    // toString method to display the configuration of the Computer
     @Override
     public String toString() {
         return "Computer Configuration: \n" +
@@ -89,10 +79,8 @@ class Computer {
     }
 }
 
-// Test class to demonstrate the creation of different configurations of Computer using the Builder pattern
 public class BuilderPatternExample {
     public static void main(String[] args) {
-        // Creating a high-end gaming computer
         Computer gamingComputer = new Computer.Builder()
                 .setCPU("Intel Core i9")
                 .setRAM("32GB")
@@ -105,7 +93,6 @@ public class BuilderPatternExample {
 
         System.out.println(gamingComputer);
 
-        // Creating an office computer
         Computer officeComputer = new Computer.Builder()
                 .setCPU("Intel Core i5")
                 .setRAM("16GB")
@@ -117,3 +104,22 @@ public class BuilderPatternExample {
         System.out.println(officeComputer);
     }
 }
+
+// OUTPUT
+
+// Computer Configuration: 
+// CPU: Intel Core i9
+// RAM: 32GB
+// Storage: 1TB SSD
+// GPU: NVIDIA GeForce RTX 3080
+// Motherboard: ASUS ROG Strix Z590-E
+// Power Supply: 850W
+// Cooling System: Liquid Cooling
+// Computer Configuration: 
+// CPU: Intel Core i5
+// RAM: 16GB
+// Storage: 512GB SSD
+// GPU: null
+// Motherboard: ASUS Prime B460M-A
+// Power Supply: 500W
+// Cooling System: null

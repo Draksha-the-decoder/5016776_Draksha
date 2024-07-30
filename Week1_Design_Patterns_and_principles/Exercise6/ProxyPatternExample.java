@@ -1,5 +1,4 @@
-// File: ProxyPatternExample.java
-
+import java.util.*;
 interface Image {
     void display();
 }
@@ -45,22 +44,30 @@ class ProxyImage implements Image {
 
 public class ProxyPatternExample {
     public static void main(String[] args) {
-        Image image1 = new ProxyImage("image1.jpg");
-        Image image2 = new ProxyImage("image2.jpg");
+        Image image1 = new ProxyImage("img1.jpg");
+        Image image2 = new ProxyImage("img2.jpg");
 
-        // Image will be loaded from remote server
         image1.display();
         System.out.println("");
 
-        // Image will be loaded from cache
         image1.display();
         System.out.println("");
 
-        // Image will be loaded from remote server
         image2.display();
         System.out.println("");
 
-        // Image will be loaded from cache
         image2.display();
     }
 }
+
+// OUTPUT
+
+// Loading image from remote server: img1.jpg
+// Displaying img1.jpg
+
+// Displaying img1.jpg
+
+// Loading image from remote server: img2.jpg
+// Displaying img2.jpg
+
+// Displaying img2.jpg

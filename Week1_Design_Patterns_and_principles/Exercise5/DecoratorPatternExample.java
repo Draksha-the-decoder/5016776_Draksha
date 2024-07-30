@@ -58,3 +58,10 @@ public class DecoratorPatternExample {
         emailAndSMSNotifier.send("This is another test message!");
     }
 }
+
+// OUTPUT
+// Sending email: Hello, this is a test message!
+// Sending SMS: Hello, this is a test message!
+// Sending Slack message: Hello, this is a test message!
+// Sending email: This is another test message!
+// Sending SMS: This is another test message!
