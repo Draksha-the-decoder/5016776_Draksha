@@ -1,15 +1,10 @@
-package Exercise1;
 public class SingletonPatternExample {
-
     public static class Logger {
         private static volatile Logger instance = null;
-
-        private Logger() {
-        }
-
+        private Logger() {}
         public static Logger getInstance() {
             if (instance == null) {
-                synchronized (Logger.class) {
+                    synchronized (Logger.class) {
                     if (instance == null) {
                         instance = new Logger();
                     }
@@ -17,12 +12,10 @@ public class SingletonPatternExample {
             }
             return instance;
         }
-
         public void log(String message) {
             System.out.println("Log message: " + message);
         }
     }
-
     public static void main(String[] args) {
         Logger logger1 = Logger.getInstance();
         Logger logger2 = Logger.getInstance();
