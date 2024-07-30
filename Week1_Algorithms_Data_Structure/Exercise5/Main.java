@@ -97,14 +97,14 @@ public class Main {
     public static void main(String[] args) {
         TaskLinkedList taskList = new TaskLinkedList();
         
-        taskList.addTask(new Task(1, "Task 1", "Pending"));
-        taskList.addTask(new Task(2, "Task 2", "Completed"));
-        taskList.addTask(new Task(3, "Task 3", "In Progress"));
+        taskList.addTask(new Task(1, "T 1", "Coding"));
+        taskList.addTask(new Task(2, "T 2", "Cooking"));
+        taskList.addTask(new Task(3, "T 3", "Studying"));
         
         System.out.println("Traversing tasks:");
         taskList.traverseTasks();
         
-        System.out.println("\nSearching for task with ID 2:");
+        System.out.println("\nSearching for task with ID 3:");
         Task task = taskList.searchTask(2);
         if (task != null) {
             System.out.println(task);
@@ -112,10 +112,26 @@ public class Main {
             System.out.println("Task not found.");
         }
         
-        System.out.println("\nDeleting task with ID 2:");
+        System.out.println("\nDeleting task with ID 1:");
         taskList.deleteTask(2);
         
         System.out.println("\nTraversing tasks after deletion:");
         taskList.traverseTasks();
     }
 }
+
+// OUTPUT
+
+// Traversing tasks:
+// Task{taskId=1, taskName='T 1', status='Coding'}
+// Task{taskId=2, taskName='T 2', status='Cooking'}
+// Task{taskId=3, taskName='T 3', status='Studying'}
+
+// Searching for task with ID 3:
+// Task{taskId=2, taskName='T 2', status='Cooking'}
+
+// Deleting task with ID 1:
+
+// Traversing tasks after deletion:
+// Task{taskId=1, taskName='T 1', status='Coding'}
+// Task{taskId=3, taskName='T 3', status='Studying'}

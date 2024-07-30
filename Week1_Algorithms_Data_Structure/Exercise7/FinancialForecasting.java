@@ -17,3 +17,6 @@ public class FinancialForecasting {
         System.out.println("Future Value: " + futureValue);
     }
 }
+
+// OUTPUT
+// Future Value: 1628.8946267774422

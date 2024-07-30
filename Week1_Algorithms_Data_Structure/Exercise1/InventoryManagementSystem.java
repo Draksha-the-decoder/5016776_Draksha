@@ -78,7 +78,7 @@ class Inventory {
             }
         }
         if (!found) {
-            System.out.println("\nProduct not found in the inventory.");
+            System.out.println("\nProduct unavailable.");
         }
     }
 
@@ -94,7 +94,7 @@ class Inventory {
             }
         }
         if (!found) {
-            System.out.println("\nProduct not found in the inventory.");
+            System.out.println("\nProduct unavailable");
         }
     }
 
@@ -129,8 +129,8 @@ public class InventoryManagementSystem {
         Inventory inventory = new Inventory();
 
         // Adding products
-        Product product1 = new Product("P01", "Product 1", 100, 200.0);
-        Product product2 = new Product("P02", "Product 2", 20, 300.0);
+        Product product1 = new Product("P01", "Product 1", 50, 3000.0);
+        Product product2 = new Product("P02", "Product 2", 90, 500.0);
         inventory.addProduct(product1);
         inventory.addProduct(product2);
 
@@ -157,3 +157,44 @@ public class InventoryManagementSystem {
         inventory.displayAllProducts();
     }
 }
+
+// OUTPUT
+// Product Added:
+// ID: P01
+// Name: Product 1
+
+// Product Added:
+// ID: P02
+// Name: Product 2
+
+// All Products:
+// --------------------------------------------------
+// ID: P01
+// Name: Product 1
+// Quantity: 100
+// Price: 200.00
+// --------------------------------------------------
+// --------------------------------------------------
+// ID: P02
+// Name: Product 2
+// Quantity: 20
+// Price: 300.00
+// --------------------------------------------------
+
+// Product Updated:
+// ID: P01
+// Name: Updated Product 1
+
+// Details of Product ID P01:
+// Product [ID=P01, Name=Updated Product 1, Quantity=150, Price=150.00]
+
+// Product Removed:
+// Product [ID=P02, Name=Product 2, Quantity=20, Price=300.00]
+
+// All Products:
+// --------------------------------------------------
+// ID: P01
+// Name: Updated Product 1
+// Quantity: 150
+// Price: 150.00
+// --------------------------------------------------

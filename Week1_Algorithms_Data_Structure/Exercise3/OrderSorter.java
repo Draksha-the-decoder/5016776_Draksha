@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 class Order {
     int orderId;
@@ -19,14 +19,14 @@ class Order {
 
 public class OrderSorter {
 
-    public static void bubbleSort(Order[] orders) {
-        int n = orders.length;
+    public static void bubbleSort(Order[] arr) {
+        int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - 1 - i; j++) {
-                if (orders[j].totalPrice > orders[j + 1].totalPrice) {
-                    Order temp = orders[j];
-                    orders[j] = orders[j + 1];
-                    orders[j + 1] = temp;
+                if (arr[j].totalPrice > arr[j + 1].totalPrice) {
+                    Order temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }
@@ -59,23 +59,20 @@ public class OrderSorter {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of orders: ");
-        int n = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
+        // no of orders
+        int n = 5;
+       
         Order[] orders = new Order[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Enter details for order #" + (i + 1) + ":");
             System.out.print("Order ID: ");
             int orderId = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
 
             System.out.print("Customer Name: ");
             String customerName = scanner.nextLine();
 
             System.out.print("Total Price: ");
             double totalPrice = scanner.nextDouble();
-            scanner.nextLine();  // Consume newline
 
             orders[i] = new Order(orderId, customerName, totalPrice);
         }
@@ -96,14 +93,12 @@ public class OrderSorter {
             System.out.println("Re-enter details for order #" + (i + 1) + ":");
             System.out.print("Order ID: ");
             int orderId = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
 
             System.out.print("Customer Name: ");
             String customerName = scanner.nextLine();
 
             System.out.print("Total Price: ");
             double totalPrice = scanner.nextDouble();
-            scanner.nextLine();  // Consume newline
 
             orders[i] = new Order(orderId, customerName, totalPrice);
         }
