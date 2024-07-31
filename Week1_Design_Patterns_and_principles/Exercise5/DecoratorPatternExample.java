@@ -54,14 +54,14 @@ public class DecoratorPatternExample {
         Notifier emailNotifier = new EmailNotifier();
         Notifier emailAndSMSNotifier = new SMSNotifierDecorator(emailNotifier);
         Notifier emailSMSAndSlackNotifier = new SlackNotifierDecorator(emailAndSMSNotifier);
-        emailSMSAndSlackNotifier.send("Hello, this is a test message!");
-        emailAndSMSNotifier.send("This is another test message!");
+        emailSMSAndSlackNotifier.send("This is notifiaction 1");
+        emailAndSMSNotifier.send("This is notification 2");
     }
 }
 
 // OUTPUT
-// Sending email: Hello, this is a test message!
-// Sending SMS: Hello, this is a test message!
-// Sending Slack message: Hello, this is a test message!
-// Sending email: This is another test message!
-// Sending SMS: This is another test message!
+// Sending email: This is notifiaction 1
+// Sending SMS: This is notifiaction 1
+// Sending Slack message: This is notifiaction 1
+// Sending email: This is notification 2
+// Sending SMS: This is notification 2

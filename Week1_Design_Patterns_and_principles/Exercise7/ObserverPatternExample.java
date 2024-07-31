@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ObserverPatternExample {
 
@@ -74,25 +74,25 @@ public class ObserverPatternExample {
     }
 
     public static void main(String[] args) {
-        StockMarket stockMarket = new StockMarket("AAPL", 150.00);
+        StockMarket stockMarket = new StockMarket("Observer1", 120.00);
 
-        Observer mobileApp = new MobileApp("MobileApp");
-        Observer webApp = new WebApp("WebApp");
+        Observer mobileApp = new MobileApp("Observer2");
+        Observer webApp = new WebApp("Observer3");
 
         stockMarket.registerObserver(mobileApp);
         stockMarket.registerObserver(webApp);
 
-        stockMarket.setStockPrice(155.00);
-        stockMarket.setStockPrice(160.00);
+        stockMarket.setStockPrice(200.00);
+        stockMarket.setStockPrice(100.00);
 
         stockMarket.deregisterObserver(webApp);
-        stockMarket.setStockPrice(165.00);
+        stockMarket.setStockPrice(73.00);
     }
 }
 // OUTPUT
 
-// MobileApp received update: AAPL is now 155.0
-// WebApp received update: AAPL is now 155.0
-// MobileApp received update: AAPL is now 160.0
-// WebApp received update: AAPL is now 160.0
-// MobileApp received update: AAPL is now 165.0
+// Observer2 received update: Observer1 is now 200.0
+// Observer3 received update: Observer1 is now 200.0
+// Observer2 received update: Observer1 is now 100.0
+// Observer3 received update: Observer1 is now 100.0
+// Observer2 received update: Observer1 is now 73.0

@@ -82,14 +82,14 @@ class Computer {
 public class BuilderPatternExample {
     public static void main(String[] args) {
         Computer gamingComputer = new Computer.Builder()
-                .setCPU("Intel Core i9")
-                .setRAM("32GB")
-                .setStorage("1TB SSD")
-                .setGPU("NVIDIA GeForce RTX 3080")
-                .setMotherboard("ASUS ROG Strix Z590-E")
-                .setPowerSupply("850W")
-                .setCoolingSystem("Liquid Cooling")
-                .build();
+               .setCPU("AMD Ryzen 9")
+               .setRAM("64GB")
+               .setStorage("2TB NVMe SSD")
+               .setGPU("NVIDIA GeForce RTX 4090")
+               .setMotherboard("MSI MPG X570 Gaming Pro Carbon")
+               .setPowerSupply("1000W")
+               .setCoolingSystem("Air Cooling")
+               .build();
 
         System.out.println(gamingComputer);
 
@@ -108,13 +108,13 @@ public class BuilderPatternExample {
 // OUTPUT
 
 // Computer Configuration: 
-// CPU: Intel Core i9
-// RAM: 32GB
-// Storage: 1TB SSD
-// GPU: NVIDIA GeForce RTX 3080
-// Motherboard: ASUS ROG Strix Z590-E
-// Power Supply: 850W
-// Cooling System: Liquid Cooling
+// CPU: AMD Ryzen 9
+// RAM: 64GB
+// Storage: 2TB NVMe SSD
+// GPU: NVIDIA GeForce RTX 4090
+// Motherboard: MSI MPG X570 Gaming Pro Carbon
+// Power Supply: 1000W
+// Cooling System: Air Cooling
 // Computer Configuration: 
 // CPU: Intel Core i5
 // RAM: 16GB

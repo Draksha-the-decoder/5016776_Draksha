@@ -12,7 +12,7 @@ class RealImage implements Image {
     }
 
     private void loadFromRemoteServer() {
-        System.out.println("Loading image from remote server: " + fileName);
+        System.out.println("Loading image : " + fileName);
     }
 
     @Override
@@ -62,12 +62,11 @@ public class ProxyPatternExample {
 
 // OUTPUT
 
-// Loading image from remote server: img1.jpg
 // Displaying img1.jpg
 
 // Displaying img1.jpg
 
-// Loading image from remote server: img2.jpg
+// Loading image : img2.jpg
 // Displaying img2.jpg
 
 // Displaying img2.jpg

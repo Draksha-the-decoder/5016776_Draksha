@@ -4,28 +4,28 @@ public class AdapterPatternExample {
         void processPayment(double amount);
     }
 
-    public static class PayPalGateway {
+    public static class GooglePayGateway {
         public void makePayment(double amount) {
-            System.out.println("Processing payment of $" + amount + " through PayPal.");
+            System.out.println("Rs. " + amount + " processing through GooglePay.");
         }
     }
 
     public static class StripeGateway {
         public void charge(double amount) {
-            System.out.println("Charging $" + amount + " through Stripe.");
+            System.out.println("Charging Rs." + amount + " through Stripe.");
         }
     }
 
-    public static class PayPalAdapter implements PaymentProcessor {
-        private PayPalGateway payPalGateway;
+    public static class GooglePayAdapter implements PaymentProcessor {
+        private GooglePayGateway GooglePayGateway;
 
-        public PayPalAdapter(PayPalGateway payPalGateway) {
-            this.payPalGateway = payPalGateway;
+        public GooglePayAdapter(GooglePayGateway GooglePayGateway) {
+            this.GooglePayGateway = GooglePayGateway;
         }
 
         @Override
         public void processPayment(double amount) {
-            payPalGateway.makePayment(amount);
+            GooglePayGateway.makePayment(amount);
         }
     }
 
@@ -43,24 +43,24 @@ public class AdapterPatternExample {
     }
 
     public static void main(String[] args) {
-        PayPalGateway payPalGateway = new PayPalGateway();
+        GooglePayGateway payPalGateway = new GooglePayGateway();
         StripeGateway stripeGateway = new StripeGateway();
 
-        PaymentProcessor payPalAdapter = new PayPalAdapter(payPalGateway);
+        PaymentProcessor payPalAdapter = new GooglePayAdapter(payPalGateway);
         PaymentProcessor stripeAdapter = new StripeAdapter(stripeGateway);
 
-        System.out.println("Using PayPal Adapter:");
-        payPalAdapter.processPayment(100.0);
+        System.out.println("GooglePay Adapter:");
+        payPalAdapter.processPayment(1000.0);
 
-        System.out.println("\nUsing Stripe Adapter:");
-        stripeAdapter.processPayment(200.0);
+        System.out.println("\nStripe Adapter:");
+        stripeAdapter.processPayment(2500.0);
     }
 }
 
 // OUTPUT
 
-// Using PayPal Adapter:
-// Processing payment of $100.0 through PayPal.
+// GooglePay Adapter:
+// Rs. 1000.0 processing through GooglePay.
 
-// Using Stripe Adapter:
-// Charging $200.0 through Stripe.
+// Stripe Adapter:
+// Charging Rs.2500.0 through Stripe.

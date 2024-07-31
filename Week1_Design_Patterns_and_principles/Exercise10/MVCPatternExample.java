@@ -79,16 +79,16 @@ public class MVCPatternExample{
 
     public static void main(String[] args) {
         Student model = new Student();
-        model.setName("John Doe");
-        model.setId("12345");
+        model.setName("Draksha");
+        model.setId("120210020011");
         model.setGrade("A");
 
         StudentView view = new StudentView();
         StudentController controller = new StudentController(model, view);
          controller.updateView();
 
-        controller.setStudentName("Jane Doe");
-        controller.setStudentGrade("A+");
+        controller.setStudentName("Anita");
+        controller.setStudentGrade("C");
 
         controller.updateView();
     }
@@ -97,10 +97,10 @@ public class MVCPatternExample{
 // OUTPUT
 
 // Student Details:
-// Name: John Doe
-// ID: 12345
+// Name: Draksha
+// ID: 120210020011
 // Grade: A
 // Student Details:
-// Name: Jane Doe
-// ID: 12345
-// Grade: A+
+// Name: Anita
+// ID: 120210020011
+// Grade: C

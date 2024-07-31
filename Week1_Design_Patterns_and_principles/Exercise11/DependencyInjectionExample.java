@@ -7,8 +7,7 @@ public class DependencyInjectionExample {
     public static class CustomerRepositoryImpl implements CustomerRepository {
         @Override
         public Customer findCustomerById(String id) {
-            // For demonstration, we return a dummy customer
-            return new Customer(id, "John Doe");
+            return new Customer(id, "Arpita");
         }
     }
 
@@ -45,7 +44,7 @@ public class DependencyInjectionExample {
     public static void main(String[] args) {
        CustomerRepository customerRepository = new CustomerRepositoryImpl();
        CustomerService customerService = new CustomerService(customerRepository);
-       Customer customer = customerService.getCustomerById("12345");
+       Customer customer = customerService.getCustomerById("78954");
         System.out.println("Customer Details:");
         System.out.println("ID: " + customer.getId());
         System.out.println("Name: " + customer.getName());
@@ -55,5 +54,5 @@ public class DependencyInjectionExample {
 // OUTPUT
 
 // Customer Details:
-// ID: 12345
-// Name: John Doe
+// ID: 78954
+// Name: Arpita
