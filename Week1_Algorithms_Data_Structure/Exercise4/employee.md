@@ -1,9 +1,6 @@
-# 1.Understanding Array Representation
+# Array
 
 Arrays are a fundamental data structure that allows you to store a collection of elements. This section will cover how arrays are represented in memory and discuss their advantages.
-
-## Memory Representation
-
 - **Contiguous Block:** Arrays are stored in a continuous block of memory. This means that all elements are placed sequentially in memory, which facilitates efficient access.
 - **Index-Based Access:** Each element in an array can be accessed directly using its index. This provides constant-time access (O(1)) to any element, making retrieval very fast.
 
@@ -14,25 +11,24 @@ Arrays are a fundamental data structure that allows you to store a collection of
 - **Low Overhead:** Arrays have minimal overhead compared to more complex data structures, such as linked lists or hash tables, making them efficient for certain use cases.
 
 
-# Analysis
 
 ## Complexity
-### 1. Addition (`addEmployee`)
+### Addition (`addEmployee`)
 
 - **Time Complexity:** O(1)
 - **Explanation:** Adding an employee involves placing the employee at the next available position in the array and incrementing the size counter. This operation is constant time because it does not depend on the number of elements in the array.
 
-### 2. Search (`searchEmployee`)
+### Search (`searchEmployee`)
 
 - **Time Complexity:** O(n)
 - **Explanation:** Searching for an employee requires a linear scan through the array to find the employee with the matching `employeeId`. In the worst case, this involves checking all elements, hence the time complexity is linear.
 
-### 3. Traverse (`traverseEmployees`)
+### Traverse (`traverseEmployees`)
 
 - **Time Complexity:** O(n)
-- **Explanation:** Traversing the array involves visiting each element once to print or process it. Therefore, the time complexity is proportional to the number of employees, which is linear.
+- **Explanation:** Traversi+ng the array involves visiting each element once to print or process it. Therefore, the time complexity is proportional to the number of employees, which is linear.
 
-### 4. Delete (`deleteEmployee`)
+### Delete (`deleteEmployee`)
 
 - **Time Complexity:** O(n)
 - **Explanation:** Deleting an employee requires:
@@ -40,7 +36,7 @@ Arrays are a fundamental data structure that allows you to store a collection of
   - Shifting all elements after the deleted employee one position to the left (which is also O(n) in the worst case).
   - The overall complexity is dominated by the linear scan and shifting operations, resulting in O(n).
 
-## Limitations of Arrays
+## Limitations
 
 1. **Fixed Size:**
    - Once an array is created, its size cannot be changed. If the number of employees exceeds the initial capacity, you cannot directly add more elements without creating a new, larger array and copying the existing elements over.
