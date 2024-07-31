@@ -4,17 +4,17 @@ public class Main {
     public static void main(String[] args) {
         // Create an array of products for linear search
         Product[] products = {
-                new Product(1, "Laptop", "Electronics"),
-                new Product(2, "Smartphone", "Electronics"),
+                new Product(1, "Jeans", "Clothing"),
+                new Product(2, "Around the world", "Books"),
                 new Product(3, "Tablet", "Electronics"),
-                new Product(4, "Headphones", "Accessories"),
-                new Product(5, "Smartwatch", "Wearables")
+                new Product(4, "Dreamcatcher", "Gifts"),
+                new Product(5, "Notebooks", "Stationary")
         };
 
         // Perform linear searches
-        System.out.println("Linear Search by ID: " + Search.linearSearchById(products, 3));
-        System.out.println("Linear Search by Name: " + Search.linearSearchByName(products, "Tablet"));
-        System.out.println("Linear Search by Category: " + Search.linearSearchByCategory(products, "Accessories"));
+        System.out.println("Linear Search by ID: " + Search.linearSearchById(products, 5));
+        System.out.println("Linear Search by Name: " + Search.linearSearchByName(products, "Notebooks"));
+        System.out.println("Linear Search by Category: " + Search.linearSearchByCategory(products, "Stationary"));
 
         // Sort products by productId for binary search
         Arrays.sort(products);
@@ -22,11 +22,11 @@ public class Main {
 
         // Sort products by productName for binary search by name
         Arrays.sort(products, Comparator.comparing(Product::getProductName));
-        System.out.println("Binary Search by Name: " + Search.binarySearchByName(products, "Tablet"));
+        System.out.println("Binary Search by Name: " + Search.binarySearchByName(products, "DreamCatcher"));
 
         // Sort products by category for binary search by category
         Arrays.sort(products, Comparator.comparing(Product::getCategory));
-        System.out.println("Binary Search by Category: " + Search.binarySearchByCategory(products, "Accessories"));
+        System.out.println("Binary Search by Category: " + Search.binarySearchByCategory(products, "Books"));
     }
 }
 
@@ -159,14 +159,12 @@ class Search {
 }
 
 // OUTPUT
-// Linear Search by ID: Product{productId=3, productName='Tablet', category='Electronics'}
-// Linear Search by Name: Product{productId=3, productName='Tablet', category='Electronics'}
-// Linear Search by Category: Product{productId=4, productName='Headphones', category='Accessories'}
+// Linear Search by ID: Product{productId=5, productName='Notebooks', category='Stationary'}
+// Linear Search by Name: Product{productId=5, productName='Notebooks', category='Stationary'}
+// Linear Search by Category: Product{productId=5, productName='Notebooks', category='Stationary'}
 // Binary Search by ID: Product{productId=3, productName='Tablet', category='Electronics'}
-// Binary Search by Name: Product{productId=3, productName='Tablet', category='Electronics'}
-// Binary Search by Category: Product{productId=4, productName='Headphones', category='Accessories'}
-// Binary Search by Name: Product{productId=3, productName='Tablet', category='Electronics'}
-// Binary Search by Category: Product{productId=4, productName='Headphones', category='Accessories'}
+// Binary Search by Name: Product{productId=4, productName='Dreamcatcher', category='Gifts'}
+// Binary Search by Category: Product{productId=2, productName='Around the world', category='Books'}
 
 
 

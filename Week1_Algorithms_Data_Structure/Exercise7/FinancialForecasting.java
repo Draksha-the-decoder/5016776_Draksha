@@ -1,22 +1,22 @@
 public class FinancialForecasting {
 
-    public static double futureVal(double pV, double G, int P) {
-        if (P == 0) {
-            return pV;
+    public static double futureVal(double pv, double g, int p) {
+        if (p == 0) {
+            return pv;
         }
-        return (1 + G) * futureVal(pV, G, P - 1);
+        return (1 + g) * futureVal(pv, g, p - 1);
     }
 
     public static void main(String[] args) {
         
-        double pV = 1000.0; 
-        double G = 0.05; 
-        int P = 10; 
+        double pv = 2000.0; 
+        double g = 0.07; 
+        int p = 9; 
 
-        double futureValue = futureVal(pV, G, P);
+        double futureValue = futureVal(pv, g, p);
         System.out.println("Future Value: " + futureValue);
     }
 }
 
 // OUTPUT
-// Future Value: 1628.8946267774422
+// Future Value: 3676.918424840311

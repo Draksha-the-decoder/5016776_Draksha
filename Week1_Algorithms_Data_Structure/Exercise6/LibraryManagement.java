@@ -1,7 +1,9 @@
+
 import java.util.Arrays;
 import java.util.List;
 
 class Book {
+
     private final int bookId;
     private final String title;
     private final String author;
@@ -26,11 +28,11 @@ class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "bookId=" + bookId +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                '}';
+        return "Book{"
+                + "bookId=" + bookId
+                + ", title='" + title + '\''
+                + ", author='" + author + '\''
+                + '}';
     }
 }
 
@@ -69,27 +71,27 @@ public class LibraryManagement {
     public static void main(String[] args) {
         // Creating a list of books
         List<Book> books = Arrays.asList(
-            new Book(1, "The Great Gatsby", "F. Scott Fitzgerald"),
-            new Book(2, "To Kill a Mockingbird", "Harper Lee"),
-            new Book(3, "1984", "George Orwell"),
-            new Book(4, "Pride and Prejudice", "Jane Austen"),
-            new Book(5, "The Catcher in the Rye", "J.D. Salinger")
+                new Book(1, "The Alchemist", "Paulo Coelho"),
+                new Book(2, "The Hobbit", "J.R.R. Tolkien"),
+                new Book(3, "Moby Dick", "Herman Melville"),
+                new Book(4, "War and Peace", "Leo Tolstoy"),
+                new Book(5, "Ulysses", "James Joyce")
         );
 
         // Search for a book by title
-        String searchTitle = "1984";
+        String searchTitle = "War and Peace";
 
         // Linear search example
         Book resultLinear = linearSearch(books, searchTitle);
         System.out.println("Linear Search Result: " + resultLinear);
 
         // Sorting books by title for binary search
-        books.sort((b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle()));  
+        books.sort((b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle()));
         Book resultBinary = binarySearch(books, searchTitle);
         System.out.println("Binary Search Result: " + resultBinary);
     }
 }
 
 // OUTPUT
-// Linear Search Result: Book{bookId=3, title='1984', author='George Orwell'}
-// Binary Search Result: Book{bookId=3, title='1984', author='George Orwell'}
+// Linear Search Result: Book{bookId=4, title='War and Peace', author='Leo Tolstoy'}
+// Binary Search Result: Book{bookId=4, title='War and Peace', author='Leo Tolstoy'}

@@ -113,12 +113,12 @@ class Inventory {
             System.out.println("No products found.");
         } else {
             for (Product product : products_list) {
-                System.out.println("--------------------------------------------------");
+                System.out.println("###############################################");
                 System.out.printf("ID: %s\n", product.getProductId());
                 System.out.printf("Name: %s\n", product.getProductName());
                 System.out.printf("Quantity: %d\n", product.getQuantity());
                 System.out.printf("Price: %.2f\n", product.getPrice());
-                System.out.println("--------------------------------------------------");
+                System.out.println("##############################################");
             }
         }
     }
@@ -138,12 +138,12 @@ public class InventoryManagementSystem {
         inventory.displayAllProducts();
 
         // Updating a product
-        Product updatedProduct1 = new Product("P01", "Updated Product 1", 150, 150.0);
+        Product updatedProduct1 = new Product("P01", "new Product 1", 150, 150.0);
         inventory.updateProduct(updatedProduct1);
 
         // Displaying a single product
-        System.out.println("\nDetails of Product ID P01:");
-        Product singleProduct = inventory.getProduct("P01");
+        System.out.println("\nDetails of P02:");
+        Product singleProduct = inventory.getProduct("P02");
         if (singleProduct != null) {
             System.out.println(singleProduct);
         } else {
@@ -159,6 +159,7 @@ public class InventoryManagementSystem {
 }
 
 // OUTPUT
+
 // Product Added:
 // ID: P01
 // Name: Product 1
@@ -168,33 +169,33 @@ public class InventoryManagementSystem {
 // Name: Product 2
 
 // All Products:
-// --------------------------------------------------
+// ##############################################
 // ID: P01
 // Name: Product 1
-// Quantity: 100
-// Price: 200.00
-// --------------------------------------------------
-// --------------------------------------------------
+// Quantity: 50
+// Price: 3000.00
+// ##############################################
+// ##############################################
 // ID: P02
 // Name: Product 2
-// Quantity: 20
-// Price: 300.00
-// --------------------------------------------------
+// Quantity: 90
+// Price: 500.00
+// ##############################################
 
 // Product Updated:
 // ID: P01
-// Name: Updated Product 1
+// Name: new Product 1
 
-// Details of Product ID P01:
-// Product [ID=P01, Name=Updated Product 1, Quantity=150, Price=150.00]
+// Details of P02:
+// Product [ID=P02, Name=Product 2, Quantity=90, Price=500.00]
 
 // Product Removed:
-// Product [ID=P02, Name=Product 2, Quantity=20, Price=300.00]
+// Product [ID=P02, Name=Product 2, Quantity=90, Price=500.00]
 
 // All Products:
-// --------------------------------------------------
+// ##############################################
 // ID: P01
-// Name: Updated Product 1
+// Name: new Product 1
 // Quantity: 150
 // Price: 150.00
-// --------------------------------------------------
+// ##############################################
