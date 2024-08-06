@@ -1,0 +1,32 @@
+Scenario 1:
+CREATE OR REPLACE TRIGGER UpdateCustomerLastModified
+BEFORE UPDATE ON Customers
+FOR EACH ROW
+BEGIN
+    :NEW.LastModified := SYSDATE;
+END UpdateCustomerLastModified;
+/
+
+
+
+
+Scenario 2:
+CREATE TABLE AuditLog (AuditID NUMBER PRIMARY KEY, TransactionID NUMBER, AccountID NUMBER, TransactionDate DATE,
+    Amount NUMBER, TransactionType VARCHAR2(10), LoggedAt DATE);
+
+
+
+Scenario 3:
+CREATE OR REPLACE TRIGGER LogTransaction
+AFTER INSERT ON Transactions
+FOR EACH ROW
+BEGIN
+    INSERT INTO AuditLog (
+        AuditID, TransactionID, AccountID, TransactionDate, Amount, TransactionType, LoggedAt 
+    ) 
+    VALUES (
+        AuditLog_seq.NEXTVAL, :NEW.TransactionID, :NEW.AccountID, :NEW.TransactionDate,
+        :NEW.Amount, :NEW.TransactionType, SYSDATE
+    );
+END LogTransaction;
+/
